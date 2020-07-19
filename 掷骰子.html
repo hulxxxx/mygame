@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>掷骰子</title>
+ <style type="text/css">
+ 	div{
+    border:0;
+    display:inline;
+    text-align: center;
+ 	}
+ 	.bkg1{
+ 	    position: absolute;
+        left: 0px;
+        top: 50px;	
+ 	}
+ 	.class1{
+ 		position: absolute;
+        left: 560px;
+        top: 150px;
+ 	}.class2{
+ 		position: absolute;
+        left: 760px;
+        top: 150px;
+ 	}.class3{
+ 		position: absolute;
+        left: 960px;
+        top: 150px;
+ 	}.class4{
+ 		position: absolute;
+        left: 1160px;
+        top: 150px;
+ 	}
+ 	.class5{
+ 		position: absolute;
+        left: 1360px;
+        top: 150px;
+ 	}
+ 	.button1{
+ 		position: absolute;
+        left: 960px;
+        top: 300px;
+        height: 50px;
+        width: 100px;
+ 	}
+ 	.button2{
+ 		position: absolute;
+        left: 960px;
+        top: 370px;
+        height: 50px;
+        width: 100px;
+ 	}
+ 	.button3{
+ 		position: absolute;
+        left: 960px;
+        top: 440px;
+        height: 50px;
+        width: 100px;
+ 	}
+ </style>
+</head>
+<body>
+ <div>
+  <img class="bkg1"  width=100% src="5a2e3b3b74e69.jpg">
+  <img class="class1" src="1.jpg" id="imgid1" >
+  <img class="class2" src="2.jpg" id="imgid2" >
+  <img class="class3" src="3.jpg" id="imgid3" >
+  <img class="class4" src="4.jpg" id="imgid4" >
+  <img class="class5" src="5.jpg" id="imgid5" >
+</div>
+<br>
+  <button class="button1" onclick="stop()">停止！</button>
+  <button class="button2" onclick="begin()">重新摇骰子~</button>
+  <a href="封面.html">
+  	<input class="button3" type="button" name="button3" name="回到首页！" value="回到首页！">
+  </a>
+  <!--<button onclick="">回到首页！</button>-->
+</body>
+<script type="text/javascript">
+  var num2 =1;
+  var num1 =1;
+  var num3 =1;
+  var num4 =1;
+  var num5 =1;
+  var time1;
+  var time2;
+  var time3;
+  var time4;
+  var time5;
+  var panduan=1;
+  function step1(){
+    num1 =Math.ceil(Math.random()*6)
+    var dom = document.getElementById("imgid1");
+    dom.src=num1 +'.png';
+  }
+  function step2(){
+    num2 =Math.ceil(Math.random()*6)
+    var dom = document.getElementById("imgid2");
+    dom.src=num2 +'.png';
+  } 
+   function step3(){
+    num3 =Math.ceil(Math.random()*6)
+    var dom = document.getElementById("imgid3");
+    dom.src=num3 +'.png';
+  }
+   function step4(){
+    num4 =Math.ceil(Math.random()*6)
+    var dom = document.getElementById("imgid4");
+    dom.src=num4 +'.png';
+  }
+   function step5(){
+    num5 =Math.ceil(Math.random()*6)
+    var dom = document.getElementById("imgid5");
+    dom.src=num5 +'.png';
+  }
+  function begin(){
+  	location.reload();
+  }
+  	if(panduan==1){
+  var time1=setInterval(step1);
+  var time2=setInterval(step2);
+  var time3=setInterval(step3);
+  var time4=setInterval(step4);
+  var time5=setInterval(step5);
+  	}  
+ function stop(){
+  	panduan =10;
+  	clearInterval(time1);
+  	clearInterval(time2);
+  	clearInterval(time3);
+  	clearInterval(time4);
+  	clearInterval(time5);
+  	setInterval(step1,10000000);
+  	setInterval(step2,10000000);
+  	setInterval(step3,10000000);
+  	setInterval(step4,10000000);
+  	setInterval(step5,10000000);
+  } 
+
+</script>
+</html> 
